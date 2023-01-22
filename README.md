@@ -1,5 +1,5 @@
-<base target="_blank">
 # the_escape
+
 Fundamentals of Python course personal project
 Text-based Choose Your Own Path Adventure
 
