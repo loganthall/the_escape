@@ -21,6 +21,7 @@ immutable. But my initial implementation was not forgiving in the way of pulling
 properly, so I changed several to Lists and left one as a Set. Upon refactoring, I realized I could make them all
 as Tuples, so I changed them, except the values of the secret words which is a Set, eliminating the possibility
 that I would accidentally change a value in one and throw off the entire flow of the game.
+![Screenshot](https://github.com/loganthall/the_escape/blob/a72c2cb50fa2a8baaf42adf274f7c228a9b4ca0c/screenshots/the-escape-1.png)
 
 There are 2 Tuples that are related to each other. I initially tried using a dictionary for this, but the
 process became more tedious and unreliable the more I wrote the code to access them, so I opted to separate
@@ -36,6 +37,7 @@ make sure the same options don't appear for each round of choices. It then pulls
 against the secret words and if it is a valid input, then displays the result which is the index in the list that was
 chosen by the user. This function essentially took me the most time of the project, as I kept changing data
 types, and experimenting with how to manipulate and call them properly.
+![Screenshot](https://github.com/loganthall/the_escape/blob/a72c2cb50fa2a8baaf42adf274f7c228a9b4ca0c/screenshots/the-escape-2.png)
 
 Moving forward, the next thing I wanted to handle was the randomization of helpful or horrible actions
 that happen, and each of those actions creates a random life or death coin flip. These functions randomly
@@ -45,6 +47,7 @@ number is a free pass and nothing happens. This was my first time implementing m
 python programming, but it was a welcome addition. In the current version of the game, only index 5 out of all 6
 of the options provides an instant death scenario every time. The life_or_death() function is called whenever
 the option to turn around and face your assailant is chosen. So you have a 50% chance of either choice.
+![Screenshot](https://github.com/loganthall/the_escape/blob/a72c2cb50fa2a8baaf42adf274f7c228a9b4ca0c/screenshots/the-escape-3.png)
 
 At this point, I needed to provide an option to play the game again, which is where the play_again()
 function comes in. At any point when the game ends, either by life or death, the option to play again needs to
@@ -53,6 +56,7 @@ checks to make sure that either y or n, or even yes or no, was entered. If the n
 appropriate message is displayed and the game is forcefully closed by using the built-in exit() method. If a yes
 option is entered, this function returns true, which will make sense when explaining the main file. If no proper
 choice was given, the function is called again and the user is asked to enter a valid option.
+![Screenshot](https://github.com/loganthall/the_escape/blob/a72c2cb50fa2a8baaf42adf274f7c228a9b4ca0c/screenshots/the-escape-4.png)
 
 Now that the modules were finished, I moved my sights to the main file that would run the entire show. I
 decided on putting the entire code into a while loop so that the play_again() functionality was much easier to
@@ -60,16 +64,19 @@ work with. This is where the “return True” portion of that function comes in
 “graphic” intro, with a user input that goes nowhere, just to allow the user to start the game when they want
 and not get thrown in immediately. The “r” at the beginning of the print statement denotes that the following
 lines are raw input, and should not be analyzed as code.
+![Screenshot](https://github.com/loganthall/the_escape/blob/a72c2cb50fa2a8baaf42adf274f7c228a9b4ca0c/screenshots/the-escape-5.png)
 
 The next part of the code I added, since it would be one of the simpler parts, was the instant win after
 an amount of "time". After every choice, an iteration counter goes up, counting the ”rooms” you have completed.
 At 10, you are an instant winner.
+![Screenshot](https://github.com/loganthall/the_escape/blob/a72c2cb50fa2a8baaf42adf274f7c228a9b4ca0c/screenshots/the-escape-6.png)
 
 The next step in the flow was calling the choice randomization, and then working with the output. If the
 output returns false, which would be done if a secret word was typed in, the appropriate message is displayed,
 and the play_again function is called, which if True(yes), the game restarts. Next, if the choice returned None,
 which would happen if an invalid input was entered, the appropriate “try again” message is displayed , the
 room counter is decremented to show that the room had not been passed, and the loop starts again.
+![Screenshot](https://github.com/loganthall/the_escape/blob/a72c2cb50fa2a8baaf42adf274f7c228a9b4ca0c/screenshots/the-escape-7.png)
 
 Following the None return, we get into the meat of the selections. If the choice input is a valid selection,
 the corresponding description for the choice is displayed. Then, if a specific choice is chosen, the life or death
@@ -83,6 +90,7 @@ action. Odd number actions that aren’t 5 will cause a return that prints the d
 method. Finally, if none of the above are true, it will return back the action and the consequence. That is the
 end of the functioning code. Where it is all in the while loop, it will all continue to run until certain actions cause
 a break in the loop to end the game.
+![Screenshot](https://github.com/loganthall/the_escape/blob/a72c2cb50fa2a8baaf42adf274f7c228a9b4ca0c/screenshots/the-escape-8.png)
 
 In conclusion, this project has forced me to stop and think many times about the way I am doing certain
 actions and if they could be done more efficiently or in a less computationally intensive manner. The multiple
