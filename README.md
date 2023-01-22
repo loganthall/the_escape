@@ -4,6 +4,8 @@ Text-based Choose Your Own Path Adventure
 
 This project highlights the using of random integer creations for the illusion of full user autonomy in their choices.
 
+Find a usable demonstration of this code [here](https://replit.com/@loganthall/theescape?v=1)
+
 As the game begins, you will be greeted by the scenario. From then, you begin making choices,
 randomized from pre-set lists. Each choice has a description of the choice, and there is always a random
 possibility of something helpful, or horrible, happening. After making it safely between rooms 10 times, you are
